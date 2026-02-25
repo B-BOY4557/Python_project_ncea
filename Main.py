@@ -5,6 +5,7 @@ import webbrowser
 import curses
 from curses import wrapper
 import keyboard
+import os
 
 
 #asking if user has required modules to run the program
@@ -33,6 +34,9 @@ openingvid.play()
 time.sleep(40) #required to make video play through without breaking script
 openingvid.stop()
 
+#clear terminal and show title screen
+os.system('clear')
+
 #Title screen
 curseslogo = """                           
        @@@@@             @@@@@    @@@@@                                                                                    
@@ -48,8 +52,11 @@ curseslogo = """
                                                QUIZ
 """
 print(curseslogo)
-
-
+time.sleep(5)
+os.system('clear')
+bgmus = vlc.MediaPlayer(r"/src/mus/TV_GAME.ogg")
+bgmus.play()
+print('hello world')
 
 
 
