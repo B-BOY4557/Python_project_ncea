@@ -3,7 +3,9 @@ import vlc
 import time
 import webbrowser
 import curses
+from curses import wrapper
 import keyboard
+
 
 #asking if user has required modules to run the program
 print("This program may not work without the following modules: vlc, time, webbrowser, keyboard, curses.\nPlease install them via pip3:")
@@ -23,31 +25,29 @@ while True:
 
 print('\npress F11 to enter fullscreen for the optimal experience, you can skip this.')#sets main term to fullscreen 
 time.sleep(3)
-    
+
 #creating a basic starting menu.
-openingvid = vlc.MediaPlayer(r"src/video/Tenna-intro.mp4")
+openingvid = vlc.MediaPlayer(r"/src/video/Tenna-intro.mp4")
 openingvid.set_fullscreen(True) #sets the video to fullscreen
 openingvid.play()
 time.sleep(40) #required to make video play through without breaking script
 openingvid.stop()
 
-#from here the curses module will be used to make a simple start menu
-def main(stdscr):
-    curses.curs_set(0)
-    stdscr.addstr(0, 0, """ 
-                           @@@@@             @@@@@    @@@@@                                                                                    
-                           @---@             #---@    *---@                                                                                    
-                           @---@             #---@    *---@                                                                                    
-                    @*======---@ @=========@ #---@ @==----===@@+===========@ @=========@@===@ @===@ @=========@ %========*@
-                    @*---------@ @=--------@ #---@ @=-------=@@+----=-----=@ @=--===--=@@=-=@ @---@ @=-------=@ %--------*@
-                    @*---------@ @=--------@ #---@ @--------=@@+---####+--=@ @=--% @=-=@@=-=@ @---@ @=-------=@ %--------*@
-                    @*---------@ @=--*@@@@@@ #---@    *---@   @+----##*---=@ @=--% @@@@@@=--------@ @=--*@@=-=@ %---@@@@@@@
-                    @*---------@ @=--*@@@@@@ #---@    *---@   @+----------=@ @=--%      @=--------@ @=--+@@=-=@ %---@@@@@@@
-                    @*---------@ @=--------@ #---@    *---@   @+---=@@%---=@ @=--%      @=--------@ @=--+@@=-=@ %--------*@
-                    @@@@@@@@@@@@ @@@@@@@@@@@ @@@@@    @@@@@   @@@@@@@@@@@@@@ @@@@@      @@@@@@@@@@@ @@@@@@@@@@@ @@@@@@@@@@@
-""")
-    stdscr.refresh()
-    stdscr.getch()
+#Title screen
+curseslogo = """                           
+       @@@@@             @@@@@    @@@@@                                                                                    
+       @---@             #---@    *---@                                                                                    
+       @---@             #---@    *---@                                                                                    
+@*======---@ @=========@ #---@ @==----===@@+===========@ @=========@@===@ @===@ @=========@ %========*@
+@*---------@ @=--------@ #---@ @=-------=@@+----=-----=@ @=--===--=@@=-=@ @---@ @=-------=@ %--------*@
+@*---------@ @=--------@ #---@ @--------=@@+---####+--=@ @=--% @=-=@@=-=@ @---@ @=-------=@ %--------*@
+@*---------@ @=--*@@@@@@ #---@    *---@   @+----##*---=@ @=--% @@@@@@=--------@ @=--*@@=-=@ %---@@@@@@@
+@*---------@ @=--*@@@@@@ #---@    *---@   @+----------=@ @=--%      @=--------@ @=--+@@=-=@ %---@@@@@@@
+@*---------@ @=--------@ #---@    *---@   @+---=@@%---=@ @=--%      @=--------@ @=--+@@=-=@ %--------*@
+@@@@@@@@@@@@ @@@@@@@@@@@ @@@@@    @@@@@   @@@@@@@@@@@@@@ @@@@@      @@@@@@@@@@@ @@@@@@@@@@@ @@@@@@@@@@@
+                                               QUIZ
+"""
+print(curseslogo)
 
 
 
