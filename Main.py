@@ -1,9 +1,6 @@
 #asks for the required modules to use them in the script (all modules are either included of downloaded from https://pypi.org)
 import vlc 
 import time
-import webbrowser
-from curses import wrapper
-import keyboard
 import os
 
 #clears terminal window
@@ -11,8 +8,8 @@ def clearterm():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 #asking if user has required modules to run the program
-print("This program may not work without the following modules: vlc, time, webbrowser, keyboard, curses.\nPlease install them via pip3:")
-print("Pip install python-vlc\npip install curses\npip install webbrowser\npip install keyboard\n")
+print("This program may not work without the following modules: vlc, time, os.\nPlease install them via pip3:")
+print("Pip install python-vlc\n")
 print('\nSome of these modules may not be neccasary but they will allow the program to run without errors.')
 print("\nPress 'y' to continue or 'n' to exit.")
 
@@ -54,11 +51,12 @@ curseslogo = """
 @*---------@ @=--------@ #---@    *---@   @+---=@@%---=@ @=--%      @=--------@ @=--+@@=-=@ %--------*@
 @@@@@@@@@@@@ @@@@@@@@@@@ @@@@@    @@@@@   @@@@@@@@@@@@@@ @@@@@      @@@@@@@@@@@ @@@@@@@@@@@ @@@@@@@@@@@
                                                QUIZ
-				   PRESS F1 AT ANY TIME FOR A GUIDE
 """
 print(curseslogo)
 time.sleep(5)
 clearterm()
+
+
 
 #intrestingly this and the openingvid shit itself if now ran in powershell python interpriter... THE MORE YOU KNOW!!!
 instance = vlc.Instance()
@@ -121,6 +119,59 @@ def tickanim(): #will display is awncer is correct
         clearterm()
         print(" ")  
         time.sleep(.5)
+        
 #make one of the tick for when your wrong.
+def uhohanim(): #will display is awncer is wrong
+    wrongsnd = vlc.MediaPlayer(r"src/mus/") #add the incorrect sound here
+    wrongsnd.play()
+    for i in range(3):
+       
+        clearterm()
+        print("""                                                                                            
+█████████████████████████████████████████████████████████████████████████████████████████████████████████
+███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███
+██▓                                                                                                   ▓██
+ ██▓                                                                                                 ▓██
+ ██▓▒                                                                                                ▓██
+ ██▓▒                                                                                                ▓██
+ ██▓▓▒                                                                                              ▓▓██
+   ██▒                                                                                              ▓██
+   ██▒                                                                                              ▓██
+    ██▓                                                                                           ▒▓█
+    ██▓                                                                                           ▒██
+    ██▓                                                                                           ▒██
+     █▓▓                                                                                        ▒▓██
+     ██▓                                                                                         ▓██
+      ██▓                                                                                         ▓██
+     ██▓▒                                                                                       ▒▓██
+      ██▓                                                                                       ▓██
+      ██▓                                                                                       ▓██
+      ██▓                             ▒▓▓▒▓▓▓▓▓ ▓▓▓    ▒▓█▓▒▓▓▓ ▓▓▒                             ▓██
+       ██▓▒                           ▒▓▓▒▓█▓▓█▓▓█▓▓▓▓▓█▓▒▓█▓█▓▓▓█▒                            ▓██
+       ██▓▒                           ▒▓▓▒▓█▓▓█▓▓█▓▓▓▓▓█▓▒▓█▓█▓▓▓█▒                            ▓██
+        ██▓▒                           ▒▓▓▓▓▒▓▓ ▓▓▓    ▒▓▓▓ ▒▓▓ ▓▓▒                          ▒▓▓█
+         ██▒                                                                                 ▒▓█
+         ██▒                                                                                 ▒▓█
+          ██▓▒                                                                                ▓▓█
+           ██▓                                                                               ▒███
+          ██▓                                                                               ▒███
+           ██▓                                                                               ▒███
+           ██▓                                                                             ▒██
+            ██▓                                                                             ▒██
+           ██▓                                                                             ▒██
+            ██▓                                                                           ▓██
+            ██▓                                                                           ▓██
+            ██▓▒                                                                         ▒▓██
+              █▓▒                                                                       ▒▓██
+              █▓▒                                                                       ▒▓██
+              █▓▒                                                                       ▒▓██
+              ██▓▒                                                                     ▒▓██
+              ███▒                                                                     ▒▓██
+              █████████████████████████████████████████████████████████████████████████████ 
+ """)#supposed to look like "UH-OH"
+        time.sleep(.5)
+        clearterm()
+        print(" ")  
+        time.sleep(.5)
 
-#I think everything works now. HERES TO BEG I  CAN START THE QUIZ NOW!!!
+#recyleable quiz layout for all questions i'll build it soon.
