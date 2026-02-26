@@ -7,6 +7,8 @@ import os
 def clearterm():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+score = 0 #sets score to 0 at the start of the quiz
+
 #asking if user has required modules to run the program
 print("This program may not work without the following modules: vlc, time, os.\nPlease install them via pip3:")
 print("Pip install python-vlc\n")
@@ -28,11 +30,11 @@ time.sleep(3)
 
 #creating a basic starting menu.
 openingvid = vlc.MediaPlayer(r"src/video/Tenna-intro.mp4")
-"""
+
 openingvid.set_fullscreen(True) #sets the video to fullscreen
 openingvid.play()
 time.sleep(40) #required to make video play through without breaking script
-"""
+
 openingvid.stop()
 
 #clear terminal and show title screen
@@ -70,10 +72,12 @@ bgmus.play()
 def tickanim(): #will display is awncer is correct
     correctsnd = vlc.MediaPlayer(r"src/mus/snd-won.mp3")
     correctsnd.play()
+    global score
+    score = score + int("1")
     for i in range(3):
        
         clearterm()
-        print("""
+        print(f"""score: {score}
 
                                                                                                         
     ████████████████████████████████████████████████████████████████████████████████████████████████  
@@ -117,7 +121,7 @@ def tickanim(): #will display is awncer is correct
     """)
         time.sleep(.5)
         clearterm()
-        print(" ")  
+        print(f"score: {score}")  
         time.sleep(.5)
         
 #make one of the tick for when your wrong.
@@ -127,7 +131,7 @@ def uhohanim(): #will display is awncer is wrong
     for i in range(3):
        
         clearterm()
-        print("""                                                                                            
+        print(f"""score: {score}                                                                                            
 █████████████████████████████████████████████████████████████████████████████████████████████████████████
 ███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███
 ██▓                                                                                                   ▓██
@@ -171,7 +175,118 @@ def uhohanim(): #will display is awncer is wrong
  """)#supposed to look like "UH-OH"
         time.sleep(.5)
         clearterm()
-        print(" ")  
+        print(f"Score: {score}")  
         time.sleep(.5)
+    
 
 #recyleable quiz layout for all questions i'll build it soon.
+orientation = ["A: ", "B: ", "C: ", "D: "]
+question = "placeholder question" 
+awncers = [""" """, """ """, """ """, """ """]
+def quizlayout():
+    print(f"Score: {score}")
+    print(question)
+    print(f"""
+    {orientation[0]}{awncers[0]}
+    {orientation[1]}{awncers[1]}
+    {orientation[2]}{awncers[2]}
+    {orientation[3]}{awncers[3]}
+    """) 
+
+#change questipon
+question = """             
+                             ##                                            
+                           #@..@#                             
+                         *@+.....@%                           
+                        @@........=@+                         
+                     *%@:....@@.....@@*:                      
+                   @*@:......*%@@....:@=#.                    
+                 @@*=.....=+@%**%@--....*+%                   
+                 *@.....==@%#****#%@==...=+@#                 
+               :@:+...++@%#********#%@*+...@#                 
+               :@:..-@%%#************#%%@-.-:@:               
+               :@:...@******@@@@@@@%**%@@*..:@-               
+               :@:.@@@@%**%@@..@+.:@@@@#.#@.:=:               
+               :@=@...#@@@@-.@@@@..........@+@=               
+               :#:%.................@@.....%:%:               
+                 +@@#.....@@.....@@@.....*@@*                 
+     :*#@@@%*:     *@@......@@@@@..=....@@#                   
+   :%@@.....@@     @@@@@..............@@@@@@@                 
+   .@:...:...:@@ @@.....@@@@@@@@@@@@@@......:@@               
+   @@@@@@@.....:@.........%:=-.....%..........:@@             
+        -@:..........@@@@@@=.+#=:::*@@@@@.......@@            
+          @@.::::..@#+:+=+.....*=+:::::.-@@.......@#          
+            @@@@@@@-:=:*.........*:-::::..:@@.:....:@=        
+                 -@.:+:...........-+::::::.@@@:.....@-%       
+                 :@.:+::-+.:=-=...-+:::::..@- #@..*:.+@       
+                 :@@@-=++*.-+++:=-:##@@@#@*%: .@+*...=@       
+                 :@..@#=:+::=:-=%@@@.....@@     *@-*+=@       
+                 :@...:@@@@#:............:.@@   %@==*         
+                 :@.........@@@@@@.........::@.               
+                 %@@@@...:@@      @@@@.....@@@@@@             
+               #@:...@@@@@            @@@@@.....@@            
+             %*:........@+             =@:........%.          
+            #@=#@@@@@@@@                 #@@@@@@@%*:-:    
+
+WHAT'S THE NAME OF THIS KID? SERIOUSLY I DON'T REMEMBER."""
+#change the awncer here
+awncers = ["""LANCER""", """DANCER""", """PRANCER""", """MR. GENEROSITY"""]
+
+while True:
+    quizlayout()
+    ask_awncer = input("A, B, C, or D? ").upper()
+
+    if ask_awncer == "A":
+        tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "B":
+        tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "C":
+        tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "D":
+        tickanim()
+        break
+        clearterm()
+    else:
+        print("Invalid choice.")
+        time.sleep(.5)
+        clearterm()
+
+#quest2
+question = """Placeholder"""
+#change the awncer here
+awncers = ["""placeholder""", """placeholder""", """placeholder""", """placeholder"""]
+
+while True:
+    quizlayout()
+    ask_awncer = input("A, B, C, or D? ").upper()
+
+    if ask_awncer == "A":
+        #uhohanim()
+        #tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "B":
+        #uhohanim()
+        #tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "C":
+        #tickanim()
+        #uhohanim()
+        break
+        clearterm()
+    elif ask_awncer == "D":
+        #tickanim()
+        #uhohanim()
+        break
+        clearterm()
+    else:
+        print("Invalid choice.")
+        time.sleep(.5)
+        clearterm()
