@@ -30,11 +30,11 @@ time.sleep(3)
 
 #creating a basic starting menu.
 openingvid = vlc.MediaPlayer(r"src/video/Tenna-intro.mp4")
-
+"""
 openingvid.set_fullscreen(True) #sets the video to fullscreen
 openingvid.play()
 time.sleep(40) #required to make video play through without breaking script
-
+"""
 openingvid.stop()
 
 #clear terminal and show title screen
@@ -123,7 +123,7 @@ def tickanim(): #will display is awncer is correct
         clearterm()
         print(f"score: {score}")  
         time.sleep(.5)
-        
+    clearterm()
 #make one of the tick for when your wrong.
 def uhohanim(): #will display is awncer is wrong
     wrongsnd = vlc.MediaPlayer(r"src/mus/") #add the incorrect sound here
@@ -177,7 +177,7 @@ def uhohanim(): #will display is awncer is wrong
         clearterm()
         print(f"Score: {score}")  
         time.sleep(.5)
-    
+    clearterm()
 
 #recyleable quiz layout for all questions i'll build it soon.
 orientation = ["A: ", "B: ", "C: ", "D: "]
@@ -258,9 +258,84 @@ while True:
         clearterm()
 
 #quest2
-question = """Placeholder"""
+question = """WHICH SHOW WAS ASGORE'S FAVORITE!?"""
 #change the awncer here
-awncers = ["""placeholder""", """placeholder""", """placeholder""", """placeholder"""]
+awncers = ["""COOKING SHOW""", """NASTY MUSIC VIDEOS""", """MONSTER MOVIES""", """COWBOY SHOW"""]
+
+while True:
+    quizlayout()
+    ask_awncer = input("A, B, C, or D? ").upper()
+
+    if ask_awncer == "A":
+        uhohanim()
+        #tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "B":
+        uhohanim()
+        #tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "C":
+        #tickanim()
+        uhohanim()
+        break
+        clearterm()
+    elif ask_awncer == "D":
+        tickanim()
+        #uhohanim()
+        break
+        clearterm()
+    else:
+        print("Invalid choice.")
+        time.sleep(.5)
+        clearterm()
+
+#quest3
+question = """
+                            %%@@%                                 
+                           %##%%@@@@@@@@@@@%                      
+                           ###%@@@@@@@@@@@@@@@@    @@%            
+                           %%%@@@@@@@@@@@@@@@@@@@@@%%%%#          
+                       %@@@@@@@%@@@@@@@@@@@@@@@@@%#####%          
+                      @@@@@@@@@@%%%@@@@@@@@%%@@@@@%####           
+                    @@@@%@@@@@@@%%##%%%%%%%%%@@@@@@@%%            
+                   @@@%%%@@@@%%%%@%%######%%@@@@@@@@@@@%          
+                  @@%%#*%@@@##%*+%%%%%%%%%%%%%@@@@@@@@%@%         
+                 @@%%###%%%#%%####%%%%%%%%%%#**#%%@@@%%%@%        
+                @@@%####*#%%#-  *%##%%%%%%######*%%%%%#%@@#       
+               %@@@%%##%%#%%*.  +%%**####%%+..*%%#%%%#*%@%%       
+              %@@@%%%##%%#*#%=.-#%%*%%#*#%*.  +#%%*%*+*#%%%       
+              %@%%%%#++%%%#*#%%%%#*%%%%##%+. -#%%%+++*#%%%%       
+              #%%##+=--+#%%%%#*##%%%%%%%#*%%%#**##%%*#%%%%%       
+              #%*+=-----=*#%%%**%%#%#*+%%###***#%%%#%%%%%%#       
+                **--------=###%*++=*####*#%%%%%%%##%%%%%%%        
+               +=-----------=######%%#*##%%%%%%*=*#%%%%%%*        
+            +==----------------=*###########*----*###%%%*         
+      *+=:.. :=---------------------------------++*####*          
+     #+.     =----------------------------------.:++**            
+  %@@@%+.   .=--------------------------------       .=           
+ %@@@@%#-   -------------.:::--------------.          ..:=        
+%@@@@@%%*. :------------::-.   .===--=+++++:             .:-      
+%%%%%@@%#=.-------------:-:           :++++=.             ...:    
+%%%%%%%%*=-------------:-=-           .=++++=.            .+%@%   
+ ##%%%##*+--------------==+-.         :+++++=:::        .=%@@@@%  
+    #+  *-------------:=++++=.      :++*++++++=+-.     .+%@@@@@@# 
+        =-------------:=++++*+.  .=+****+++++++++ -.  .=#%%%%%%@%#
+      #%%%@@%%+=-------=+++++*+=+***++****+++++++   :.:*##%%%%%%%#
+     %%%%%%%%%%@%#++++++++++*+++++++++******++++++    -+###%%%%%# 
+    #%%%%%%%%#%%%%%##**###*******++*********#####%%@@%@%# *##%#   
+    *%%%%%%%%#%%%%%########################%%#%%%%%%%@@@@%*       
+     #%%%#%##%%%%%%#*++*****#################%%%%%%%#%%%%@%#      
+      #%%%%%%%%%%%#*        =+++*********####%%%%%%#%%%%%%%%      
+       +#%%%%%%##*=                      +*##%%%%%##%%%#%%#*      
+            *+=                            *##%%%%%%%#%%%#*       
+                                             *###%%%%%%#*         
+                                                +**#*+                                    
+BRAND A VALUES THIS RALSEI AT $8! WHAT'S THE TRUE VALUE!?
+"""
+#change the awncer here
+awncers = ["""HIGHER""", """LOWER""", """PRICELESS""", """$32.00 MSRP"""]
 
 while True:
     quizlayout()
@@ -268,22 +343,91 @@ while True:
 
     if ask_awncer == "A":
         #uhohanim()
-        #tickanim()
+        tickanim()
         break
         clearterm()
     elif ask_awncer == "B":
-        #uhohanim()
+        uhohanim()
         #tickanim()
         break
         clearterm()
     elif ask_awncer == "C":
         #tickanim()
+        uhohanim()
+        break
+        clearterm()
+    elif ask_awncer == "D":
+        tickanim()
+        #uhohanim()
+        break
+        clearterm()
+    else:
+        print("Invalid choice.")
+        time.sleep(.5)
+        clearterm()
+
+
+#quest4
+question = """WHAT IS THE NAME OF THIS SHOW'S HOST?"""
+#change the awncer here
+awncers = ["""MR. TV GUY""", """MR. LIL' NOSE""", """MR. TENNA""", """MR. EMAIL"""]
+
+while True:
+    quizlayout()
+    ask_awncer = input("A, B, C, or D? ").upper()
+
+    if ask_awncer == "A":
+        uhohanim()
+        #tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "B":
+        uhohanim()
+        #tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "C":
+        tickanim()
         #uhohanim()
         break
         clearterm()
     elif ask_awncer == "D":
         #tickanim()
+        uhohanim()
+        break
+        clearterm()
+    else:
+        print("Invalid choice.")
+        time.sleep(.5)
+        clearterm()
+
+#quest5
+question = """WHAT IS THE HIGHLY MEMORABLE HEADING OF TV TIME?"""
+#change the awncer here
+awncers = ["""DON'T TOUCH THAT DIAL!""", """MARVELOUS MYSTERY BOARD""", """MAGICAL MYSTERY BOARD""", """DON'T LICK THE SCREEN!"""]
+
+while True:
+    quizlayout()
+    ask_awncer = input("A, B, C, or D? ").upper()
+
+    if ask_awncer == "A":
+        uhohanim()
+        #tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "B":
         #uhohanim()
+        tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "C":
+        #tickanim()
+        uhohanim()
+        break
+        clearterm()
+    elif ask_awncer == "D":
+        #tickanim()
+        uhohanim()
         break
         clearterm()
     else:
