@@ -434,3 +434,37 @@ while True:
         print("Invalid choice.")
         time.sleep(.5)
         clearterm()
+
+#quest5
+question = """WHAT IS THE HIGHLY MEMORABLE HEADING OF TV TIME?"""
+#change the awncer here
+awncers = [""" """, """ """, """MAGICAL MYSTERY BOARD""", """DON'T LICK THE SCREEN!"""]
+
+while True:
+    quizlayout()
+    ask_awncer = input("A, B, C, or D? ").upper()
+
+    if ask_awncer == "A":
+        #uhohanim()
+        #tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "B":
+        #uhohanim()
+        #tickanim()
+        break
+        clearterm()
+    elif ask_awncer == "C":
+        #tickanim()
+        #uhohanim()
+        break
+        clearterm()
+    elif ask_awncer == "D":
+        #tickanim()
+        #uhohanim()
+        break
+        clearterm()
+    else:
+        print("Invalid choice.")
+        time.sleep(.5)
+        clearterm()
