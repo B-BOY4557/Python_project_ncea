@@ -425,3 +425,5 @@ while True:
 print(f"Final Score: {score}/5")
 time.sleep(7)
 exit()
+#final note because why not. I now understand why linus torvold said git also got its name because he just wanted to get hit by a bus or somthing idk cool man don't remember the exact quote but hey heres to hope the project is done. 
+#mfw i finaly complete this project: https://youtu.be/toTkY8g8Stg?t=68
