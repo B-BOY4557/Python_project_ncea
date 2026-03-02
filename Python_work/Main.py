@@ -10,20 +10,9 @@ def clearterm():
 score = 0 #sets score to 0 at the start of the quiz
 
 #asking if user has required modules to run the program
-print("This program may not work without the following modules: vlc, time, os.\nPlease install them via pip3:")
-print("Pip install python-vlc\n")
-print('\nSome of these modules may not be neccasary but they will allow the program to run without errors.')
-print("\nPress 'y' to continue or 'n' to exit.")
-
- #asks user if they are confident they can run the program as for having required modules
-while True:  
-    choice = input().lower()
-    if choice == 'y':
-        break
-    elif choice == 'n':
-        exit() 
-    else:
-        print("Invalid choice. Please enter 'y' or 'n': ") #will only run if use enter invalid string
+print("This program uses the python-vlc module included in the .venv folder included")
+print("\nplease be sure you have vlc installed on your computer from https://www.videolan.org/vlc/index.html")
+time.sleep(3)
 
 print('\npress F11 to enter fullscreen for the optimal experience, you can skip this.')#sets main term to fullscreen 
 time.sleep(3)
@@ -126,8 +115,6 @@ def tickanim(): #will display is awncer is correct
     clearterm()
 #make one of the tick for when your wrong.
 def uhohanim(): #will display is awncer is wrong
-    wrongsnd = vlc.MediaPlayer(r"src/mus/") #add the incorrect sound here
-    wrongsnd.play()
     for i in range(3):
        
         clearterm()
@@ -435,36 +422,6 @@ while True:
         time.sleep(.5)
         clearterm()
 
-#quest5
-question = """WHAT IS THE HIGHLY MEMORABLE HEADING OF TV TIME?"""
-#change the awncer here
-awncers = [""" """, """ """, """MAGICAL MYSTERY BOARD""", """DON'T LICK THE SCREEN!"""]
-
-while True:
-    quizlayout()
-    ask_awncer = input("A, B, C, or D? ").upper()
-
-    if ask_awncer == "A":
-        #uhohanim()
-        #tickanim()
-        break
-        clearterm()
-    elif ask_awncer == "B":
-        #uhohanim()
-        #tickanim()
-        break
-        clearterm()
-    elif ask_awncer == "C":
-        #tickanim()
-        #uhohanim()
-        break
-        clearterm()
-    elif ask_awncer == "D":
-        #tickanim()
-        #uhohanim()
-        break
-        clearterm()
-    else:
-        print("Invalid choice.")
-        time.sleep(.5)
-        clearterm()
+print(f"Final Score: {score}/5")
+time.sleep(7)
+exit()
