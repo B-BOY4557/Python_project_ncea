@@ -19,11 +19,11 @@ time.sleep(3)
 
 #creating a basic starting menu.
 openingvid = vlc.MediaPlayer(r"src/video/Tenna-intro.mp4")
-"""
+
 openingvid.set_fullscreen(True) #sets the video to fullscreen
 openingvid.play()
 time.sleep(40) #required to make video play through without breaking script
-"""
+
 openingvid.stop()
 
 #clear terminal and show title screen
